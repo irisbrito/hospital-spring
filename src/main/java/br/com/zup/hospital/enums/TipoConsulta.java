@@ -1,4 +1,4 @@
-package br.com.zup.hospital.models;
+package br.com.zup.hospital.enums;
 
 public enum TipoConsulta {
     CARDIO,

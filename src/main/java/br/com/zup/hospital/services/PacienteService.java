@@ -17,6 +17,7 @@ public class PacienteService {
             pesquisarPaciente(paciente);
         }catch (RuntimeException erro){
             pacientes.add(paciente);
+            paciente.setHistorico(new ArrayList<>());
             return paciente;
         }
         return paciente;

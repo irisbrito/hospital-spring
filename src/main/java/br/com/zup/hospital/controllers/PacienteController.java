@@ -1,5 +1,6 @@
 package br.com.zup.hospital.controllers;
 
+import br.com.zup.hospital.DTOs.CadastroPacienteDTO;
 import br.com.zup.hospital.models.Paciente;
 import br.com.zup.hospital.services.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,9 @@ public class PacienteController {
 
     @PutMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Paciente adicionarPaciente(@RequestBody Paciente paciente){
-        return pacienteService.adicionarPaciente(paciente);
+    public Paciente adicionarPaciente(@RequestBody CadastroPacienteDTO cadastroPacienteDTO){
+        Paciente objetoPaciente = pacienteService.adicionarPaciente(cadastroPacienteDTO.converterDTOParaPaciente());
+        return objetoPaciente;
     }
 
     @GetMapping("{cpf}/")

@@ -1,5 +1,6 @@
 package br.com.zup.hospital.services;
 
+import br.com.zup.hospital.exceptions.PacienteNaoEncontradoException;
 import br.com.zup.hospital.models.Historico;
 import br.com.zup.hospital.models.Paciente;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class PacienteService {
                 return paciente;
             }
         }
-        throw new RuntimeException("Paciente não encontrado pelo CPF indicado");
+        throw new PacienteNaoEncontradoException("Paciente não encontrado pelo CPF indicado");
     }
 
 

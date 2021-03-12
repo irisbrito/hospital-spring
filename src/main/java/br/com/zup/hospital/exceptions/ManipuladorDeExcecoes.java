@@ -25,7 +25,7 @@ public class ManipuladorDeExcecoes extends ResponseEntityExceptionHandler {
         List<ObjetoDeErro> objetosDeErro = getErros(ex);
         RespostaDeErro respostaDeErro = new RespostaDeErro("Validação", status.value(),
                 status.getReasonPhrase(), objetosDeErro);
-        return ResponseEntity.status(status).body(objetosDeErro);
+        return ResponseEntity.status(status).body(respostaDeErro);
     }
 
     private List<ObjetoDeErro> getErros(MethodArgumentNotValidException exception){

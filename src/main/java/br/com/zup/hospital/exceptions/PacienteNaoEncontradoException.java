@@ -1,7 +1,7 @@
 package br.com.zup.hospital.exceptions;
 
 public class PacienteNaoEncontradoException extends RuntimeException {
-    private int Status;
+    private int Status = 400;
     private String campo;
     private String razaoDoErro;
     private String tipoDoErro;

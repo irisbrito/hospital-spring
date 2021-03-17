@@ -16,4 +16,10 @@ public class HistoricoService {
         paciente.getHistorico().add(historico);
         return historico;
     }
+
+    private void ordenaHistoricosDoPaciente(Paciente paciente) {
+        paciente.getHistorico().sort((Historico historico1, Historico historico2) -> {
+            return historico2.getDataDoRegistro().compareTo(historico1.getDataDoRegistro());
+        });
+    }
 }
